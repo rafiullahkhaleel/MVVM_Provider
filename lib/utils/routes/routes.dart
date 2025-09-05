@@ -5,6 +5,7 @@ import 'package:mvvm/view/login_screen.dart';
 
 class Routes {
   static MaterialPageRoute generateRoute(RouteSettings setting) {
+   // print("✅ Route call hua: ${setting.name}");
     switch (setting.name) {
       case RoutesName.home:
         return MaterialPageRoute(
@@ -17,7 +18,7 @@ class Routes {
       default:
        return MaterialPageRoute(
           builder: (context) {
-            return Scaffold(body: Center(child: Text('No route defined')));
+            return Scaffold(body: Center(child: Text('No route defined for ${setting.name}')));
           },
         );
     }
