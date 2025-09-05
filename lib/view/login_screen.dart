@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm/utils/routes/routes_name.dart';
-import 'package:mvvm/utils/utils.dart';
+import 'package:mvvm/resources/components/custom_field.dart';
+import 'package:mvvm/resources/components/round_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -13,17 +13,16 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            InkWell(
-                onTap: (){
-                  //Navigator.pushNamed(context, RoutesName.home);
-                  //Utils.showToastMessage('Hello');
-                  Utils.showFlushBarMessage('Hello', context);
-                },
-                child: Text('Click'))
+            CustomField(title: 'Email', controller: TextEditingController()),
+            SizedBox(height: 20),
+            CustomField(title: 'Password', controller: TextEditingController()),
+            SizedBox(height: 20),
+            RoundButton(title: 'Login', onTap: () {}),
           ],
         ),
       ),
