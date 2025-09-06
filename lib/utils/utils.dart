@@ -20,6 +20,7 @@ class Utils {
     // ).show(context);
     showFlushbar(context: context, flushbar:  Flushbar(
       message: message,
+      backgroundColor: Colors.red,
       duration: Duration(seconds: 3),
     )..show(context));
   }
