@@ -3,7 +3,7 @@ import 'package:mvvm/data/network/network_api_services.dart';
 import 'package:mvvm/resources/app_url.dart';
 
 class AuthRepository{
-   BaseApiServices _apiServices = NetworkApiService();
+   final BaseApiServices _apiServices = NetworkApiService();
 
    Future<dynamic> loginApi(dynamic data) async {
      try {

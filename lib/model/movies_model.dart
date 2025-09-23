@@ -31,11 +31,11 @@ class Movies {
   String? contentRating;
   String? duration;
   String? releaseDate;
-  int? averageRating;
+  dynamic averageRating;
   String? originalTitle;
   String? storyline;
   List<String>? actors;
-  String? imdbRating;
+  dynamic imdbRating;
   String? posterurl;
 
   Movies(
