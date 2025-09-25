@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:mvvm/data/app_exception.dart';
 import 'package:mvvm/data/network/base_api_services.dart';
 import 'package:http/http.dart' as http;
@@ -34,10 +35,10 @@ class NetworkApiService extends BaseApiServices {
             },
           )
           .timeout(const Duration(seconds: 15));
-      print('URL: $url');
-      print('Request Body: $data');
-      print('Response: ${response.body}');
-      print('Status Code: ${response.statusCode}');
+      debugPrint('URL: $url');
+      debugPrint('Request Body: $data');
+      debugPrint('Response: ${response.body}');
+      debugPrint('Status Code: ${response.statusCode}');
 
       responseJson = returnResponse(response);
     } on SocketException {
