@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm/data/response/status.dart';
+import 'package:mvvm/utils/utils.dart';
 import 'package:mvvm/view_model/movies_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +15,6 @@ class _HomeScreenState extends State<HomeScreen> {
   final MoviesViewModel _moviesViewModel = MoviesViewModel();
   @override
   void initState() {
-    // TODO: implement initState
     _moviesViewModel.fetchMoviesList();
     super.initState();
   }
@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('API Data')),
+      appBar: AppBar(title: Text('API Data'),centerTitle: true,),
       body: ChangeNotifierProvider(
         create: (_) => MoviesViewModel(),
         child: Consumer<MoviesViewModel>(
@@ -50,6 +50,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         title: Text(data.title ?? ''),
                         subtitle: Text(data.year ?? ''),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(Utils.averageRating(data.ratings ?? <int>[]).toString()),
+                            Icon(Icons.star,color: Colors.yellow,)
+                          ],
+                        ),
                       ),
                     );
                   },

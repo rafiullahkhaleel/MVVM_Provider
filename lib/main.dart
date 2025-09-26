@@ -21,11 +21,12 @@ class MyApp extends StatelessWidget {
       ChangeNotifierProvider(create: (_)=>UserViewModel())
     ],
     child: MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: RoutesName.splash,
+      initialRoute: RoutesName.home,
       onGenerateRoute: Routes.generateRoute,
     ),
     );
